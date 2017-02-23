@@ -1,4 +1,4 @@
-.heading, .video {
+.heading, .video, .ideas {
   margin-right: auto;
   margin-left: auto;
   text-align: center; }
@@ -8,6 +8,9 @@
   top: 0;
   left: 0; }
 
+a {
+  text-decoration: none; }
+
 body {
   font-family: Verdana, sans-serif; }
   body .container {
@@ -15,15 +18,16 @@ body {
     margin-top: 30px; }
 
 .heading {
-  width: 70%;
-  color: #404040; }
-  .heading h2 {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 26px;
-    margin-bottom: 20px; }
+  width: 70%; }
   .heading .sub-heading {
     margin-bottom: 30px; }
+
+h2 {
+  color: #404040;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 26px;
+  margin-bottom: 15px; }
 
 .sub-heading {
   font-size: 14px;
@@ -33,7 +37,7 @@ body {
 .video {
   width: 90%;
   position: relative;
-  height: 730px; }
+  height: 720px; }
   .video .overlay {
     background: url("../img/youtube/poster.jpg") no-repeat center;
     width: 100%;
@@ -51,5 +55,35 @@ body {
       width: 21px;
       margin: 0 auto;
       position: relative; }
+
+.ideas {
+  width: 75%; }
+  .ideas .sub-heading {
+    margin-bottom: 40px; }
+  .ideas .image-grid {
+    clear: both;
+    overflow: hidden;
+    margin-bottom: 70px; }
+    .ideas .image-grid .image-grid-item {
+      width: 33.3%;
+      padding: 0 20px;
+      box-sizing: border-box;
+      float: left; }
+      .ideas .image-grid .image-grid-item img {
+        width: 100%;
+        margin-bottom: 5px; }
+      .ideas .image-grid .image-grid-item p {
+        font-size: 12px;
+        line-height: 14px; }
+      .ideas .image-grid .image-grid-item a {
+        color: #505050; }
+  .ideas .cta {
+    margin-bottom: 60px; }
+    .ideas .cta a {
+      font-size: 14px;
+      color: #3568a8;
+      text-transform: uppercase;
+      border-bottom: 2px solid #3568a8;
+      font-weight: bold; }
 
 /*# sourceMappingURL=main.css.map */

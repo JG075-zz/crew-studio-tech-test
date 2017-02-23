@@ -10,6 +10,10 @@
   position:absolute; top:0; left:0;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   font-family: Verdana, sans-serif;
 
@@ -21,22 +25,22 @@ body {
 
 .heading {
     width: 70%;
-    color: #404040;
-
-    h2 {
-      text-transform: uppercase;
-      font: {
-        weight: bold;
-        size: 26px;
-      }
-      margin-bottom: 20px;
-    }
 
     .sub-heading {
       margin-bottom: 30px;
     }
 
     @extend %block;
+}
+
+h2 {
+  color: #404040;
+  text-transform: uppercase;
+  font: {
+    weight: bold;
+    size: 26px;
+  }
+  margin-bottom: 15px;
 }
 
 .sub-heading {
@@ -48,7 +52,7 @@ body {
 .video {
   width: 90%;
   position:relative;
-  height: 730px;
+  height: 720px;
 
   .overlay {
     background: url('../img/youtube/poster.jpg') no-repeat center;
@@ -78,6 +82,55 @@ body {
       position: relative;
 
       @extend %overlap;
+    }
+  }
+
+  @extend %block;
+}
+
+.ideas {
+  width: 75%;
+
+  .sub-heading {
+    margin-bottom: 40px;
+  }
+
+  .image-grid {
+    clear: both;
+    overflow: hidden;
+    margin-bottom: 70px;
+
+    .image-grid-item {
+      width: 33.3%;
+      padding: 0 20px;
+      box-sizing: border-box;
+      float: left;
+
+      img {
+        width: 100%;
+        margin-bottom: 5px;
+      }
+
+      p {
+        font-size: 12px;
+        line-height: 14px;
+      }
+
+      a {
+        color: #505050;
+      }
+    }
+  }
+
+  .cta {
+    margin-bottom: 60px;
+
+    a {
+      font-size: 14px;
+      color: #3568a8;
+      text-transform: uppercase;
+      border-bottom: 2px solid #3568a8;
+      font-weight: bold;
     }
   }
 
