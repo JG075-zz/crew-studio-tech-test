@@ -1,4 +1,4 @@
-.heading, .video, .ideas {
+.heading, .video, .ideas, .products {
   margin-right: auto;
   margin-left: auto;
   text-align: center; }
@@ -17,17 +17,20 @@ body {
     width: 100%;
     margin-top: 30px; }
 
-.heading {
-  width: 70%; }
-  .heading .sub-heading {
-    margin-bottom: 30px; }
-
-h2 {
+h2, h3 {
   color: #404040;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 26px;
   margin-bottom: 15px; }
+
+h3 {
+  font-size: 18px; }
+
+.heading {
+  width: 70%; }
+  .heading .sub-heading {
+    margin-bottom: 30px; }
 
 .sub-heading {
   font-size: 14px;
@@ -77,6 +80,8 @@ h2 {
         line-height: 14px; }
       .ideas .image-grid .image-grid-item a {
         color: #505050; }
+        .ideas .image-grid .image-grid-item a:hover {
+          text-decoration: underline; }
   .ideas .cta {
     margin-bottom: 60px; }
     .ideas .cta a {
@@ -85,5 +90,24 @@ h2 {
       text-transform: uppercase;
       border-bottom: 2px solid #3568a8;
       font-weight: bold; }
+
+.products {
+  width: 75%;
+  overflow: hidden;
+  margin-bottom: 70px; }
+  .products h3 {
+    margin-bottom: 40px; }
+  .products .product-grid .item {
+    width: 25%;
+    float: left;
+    padding: 0 20px;
+    box-sizing: border-box; }
+    .products .product-grid .item a {
+      font-size: 14px;
+      color: #0d122d; }
+      .products .product-grid .item a:hover {
+        text-decoration: underline; }
+    .products .product-grid .item img {
+      width: 100%; }
 
 /*# sourceMappingURL=main.css.map */
