@@ -3,16 +3,12 @@
   margin-left: auto;
   text-align: center; }
 
-.video .overlay, .video .youtube, .video .play-button-container .play-button {
-  position: absolute;
-  top: 0;
-  left: 0; }
-
 a {
   text-decoration: none; }
 
 body {
-  font-family: Verdana, sans-serif; }
+  font-family: Verdana, sans-serif;
+  min-width: 320px; }
   body .container {
     width: 100%;
     margin-top: 30px; }
@@ -41,25 +37,66 @@ h3 {
 
 .video {
   width: 90%;
-  position: relative;
-  height: 720px; }
-  .video .overlay {
-    background: url("../img/youtube/poster.jpg") no-repeat center;
+  margin-bottom: 80px; }
+  .video .videoWrapper {
+    position: relative;
     width: 100%;
-    height: 640px; }
-  .video .play-button-container {
-    padding-top: 308px;
-    height: 332px;
-    width: 100%; }
-    .video .play-button-container .play-button {
-      background: url("../img/buttons/play-button.svg") no-repeat top 19px left 21px;
-      padding: 19px;
+    height: 0;
+    background-color: #000; }
+    .video .videoWrapper43 {
+      padding-top: 75%; }
+    .video .videoWrapper169 {
+      padding-top: 56%; }
+  .video .videoIframe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent; }
+  .video .videoPoster {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-size: cover;
+    text-indent: -999em;
+    overflow: hidden;
+    opacity: 1;
+    -webkit-transition: opacity 800ms, height 0s;
+    -moz-transition: opacity 800ms, height 0s;
+    transition: opacity 800ms, height 0s;
+    -webkit-transition-delay: 0s, 0s;
+    -moz-transition-delay: 0s, 0s;
+    transition-delay: 0s, 0s; }
+    .video .videoPoster:before {
+      content: '';
+      background: url("../img/buttons/play-button.svg") no-repeat top 18px left 22px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 60px;
+      height: 60px;
+      margin: -40px 0 0 -40px;
       border: 2px solid #fff;
-      border-radius: 50%;
-      height: 24px;
-      width: 21px;
-      margin: 0 auto;
-      position: relative; }
+      border-radius: 100%; }
+    .videoWrapperActive .video .videoPoster {
+      opacity: 0;
+      height: 0;
+      -webkit-transition-delay: 0s, 800ms;
+      -moz-transition-delay: 0s, 800ms;
+      transition-delay: 0s, 800ms; }
 
 .ideas {
   width: 75%; }
@@ -185,7 +222,7 @@ h3 {
     width: 110px;
     position: relative;
     top: -20px;
-    left: 600px;
+    left: 50%;
     bottom: 0; }
     .sleep-tips .sm-icons .facebook, .sleep-tips .sm-icons .twitter {
       display: block;
@@ -206,5 +243,14 @@ h3 {
         background: url("../img/icons/facebook-icon.svg") center no-repeat; }
     .sleep-tips .sm-icons .twitter .icon {
       background: url("../img/icons/twitter-icon.svg") center no-repeat; }
+
+@media (max-width: 375px) {
+  .video .videoPoster:before {
+    background: url(../img/buttons/play-button.svg) no-repeat center left 14px;
+    margin: -30px 0 0 -30px;
+    background-size: 40%;
+    top: 55%;
+    width: 40px;
+    height: 40px; } }
 
 /*# sourceMappingURL=main.css.map */

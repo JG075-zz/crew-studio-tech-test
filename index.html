@@ -16,11 +16,15 @@
         <p class="sub-heading">Everyone can improve their sleeping performance. All it takes is a little preparation and the right kit.<br> Which is where we come in.</p>
       </section>
       <div class="video">
-        <iframe class="youtube" width="420" height="315" src="https://www.youtube.com/embed/7YwmESPTZFM"></iframe>
-        <div class="overlay"></div>
-        <div class="play-button-container">
-          <div class="play-button"></div>
-        </div>
+        <!-- the class "videoWrapper169" means a 16:9 aspect ration video. Another option is "videoWrapper43" for 4:3. -->
+       <div class="videoWrapper videoWrapper169 js-videoWrapper">
+         <!-- YouTube iframe. -->
+         <!-- note the iframe src is empty by default, the url is in the data-src="" argument -->
+         <!-- also note the arguments on the url, to autoplay video, remove youtube adverts/dodgy links to other videos, and set the interface language -->
+         <iframe class="videoIframe js-videoIframe" src="" frameborder="0" allowTransparency="true" allowfullscreen data-src="https://www.youtube.com/embed/7YwmESPTZFM?autoplay=1& modestbranding=1&rel=0&hl=sv"></iframe>
+         <!-- the poster frame - in the form of a button to make it keyboard accessible -->
+         <button class="videoPoster js-videoPoster" style="background-image:url(img/youtube/poster.jpg);">Play video</button>
+       </div>
       </div>
       <section class="ideas">
         <h2>Performance Enhancing Designs</h2>
