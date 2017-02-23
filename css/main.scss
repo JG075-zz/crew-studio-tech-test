@@ -51,6 +51,7 @@ h3 {
 
     .sub-heading {
       margin-bottom: 30px;
+      padding: 0 70px;
     }
 
     @extend %block;
@@ -66,7 +67,7 @@ h3 {
   width: 90%;
   margin-bottom: 80px;
 
-  $color-button:       #fff;
+  $color-button: #fff;
   $color-button-hover: #f00;
 
   .videoWrapper {
@@ -387,7 +388,48 @@ h3 {
 }
 
 @media (max-width: 1024px) {
-  
+  .ideas .image-grid {
+    margin-bottom: 40px;
+
+    .image-grid-item {
+      width: 100%;
+      float: none;
+      margin-bottom: 20px;
+      padding: 0;
+
+      img {
+        width: 60%;
+      }
+    }
+  }
+
+  .heading .sub-heading {
+    padding: 0;
+  }
+
+  .products .product-grid .item {
+    width: 33.3%;
+  }
+}
+
+@media (max-width: 768px) {
+  .ideas .image-grid .image-grid-item img {
+      width: 80%;
+  }
+
+  .video {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 425px) {
+  .heading, .ideas {
+    width: 90%;
+  }
+
+  .ideas .image-grid .image-grid-item img {
+      width: 100%;
+  }
 }
 
 @media (max-width: 375px) {
