@@ -1,4 +1,4 @@
-.heading, .video, .ideas, .products {
+.heading, .video, .ideas, .products, .sleep-tips {
   margin-right: auto;
   margin-left: auto;
   text-align: center; }
@@ -22,13 +22,15 @@ h2, h3 {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 26px;
-  margin-bottom: 15px; }
+  margin-bottom: 10px; }
 
 h3 {
   font-size: 18px; }
 
 .heading {
   width: 70%; }
+  .heading h2, .heading h3 {
+    margin-bottom: 15px; }
   .heading .sub-heading {
     margin-bottom: 30px; }
 
@@ -94,7 +96,7 @@ h3 {
 .products {
   width: 75%;
   overflow: hidden;
-  margin-bottom: 70px; }
+  margin-bottom: 80px; }
   .products h3 {
     margin-bottom: 40px; }
   .products .product-grid .item {
@@ -109,5 +111,100 @@ h3 {
         text-decoration: underline; }
     .products .product-grid .item img {
       width: 100%; }
+
+.sleep-tips {
+  margin-bottom: 10px; }
+  .sleep-tips .sub-heading {
+    margin-bottom: 20px; }
+  .sleep-tips .tips-carousel {
+    height: 462px;
+    overflow: hidden;
+    border-top: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5; }
+    .sleep-tips .tips-carousel .tip {
+      padding-top: 10px;
+      text-align: left; }
+      .sleep-tips .tips-carousel .tip .slide-left, .sleep-tips .tips-carousel .tip .slide-right {
+        width: 50%;
+        float: left;
+        box-sizing: border-box; }
+      .sleep-tips .tips-carousel .tip .slide-left img {
+        width: 100%; }
+      .sleep-tips .tips-carousel .tip .slide-right {
+        padding-top: 130px;
+        height: 291.5px;
+        width: 50%;
+        float: left; }
+        .sleep-tips .tips-carousel .tip .slide-right .wrapper {
+          height: 119px;
+          width: 100%;
+          padding: 0 150px 0 40px;
+          box-sizing: border-box; }
+          .sleep-tips .tips-carousel .tip .slide-right .wrapper h3 {
+            font-size: 42px;
+            font-weight: bold;
+            text-decoration: uppercase;
+            margin-bottom: 8px; }
+          .sleep-tips .tips-carousel .tip .slide-right .wrapper .coach-says {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0160a0;
+            margin-bottom: 18px; }
+          .sleep-tips .tips-carousel .tip .slide-right .wrapper .quote {
+            font-size: 24px; }
+    .sleep-tips .tips-carousel .interface {
+      position: relative; }
+      .sleep-tips .tips-carousel .interface .button-left, .sleep-tips .tips-carousel .interface .button-right {
+        background: #0160a0;
+        height: 60px;
+        width: 60px;
+        position: absolute;
+        top: 180px; }
+        .sleep-tips .tips-carousel .interface .button-left .wrapper, .sleep-tips .tips-carousel .interface .button-right .wrapper {
+          padding-top: 22.5px;
+          height: 37.5px;
+          width: 60px; }
+        .sleep-tips .tips-carousel .interface .button-left .arrow, .sleep-tips .tips-carousel .interface .button-right .arrow {
+          background: url("../img/icons/arrow-left.svg") no-repeat center;
+          height: 15px;
+          width: 100%;
+          margin-left: auto;
+          margin-right: auto; }
+      .sleep-tips .tips-carousel .interface .button-left {
+        left: 0px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px; }
+      .sleep-tips .tips-carousel .interface .button-right {
+        right: 0px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px; }
+        .sleep-tips .tips-carousel .interface .button-right .arrow {
+          transform: rotate(180deg); }
+  .sleep-tips .sm-icons {
+    height: 50px;
+    width: 110px;
+    position: relative;
+    top: -20px;
+    left: 600px;
+    bottom: 0; }
+    .sleep-tips .sm-icons .facebook, .sleep-tips .sm-icons .twitter {
+      display: block;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background: #000;
+      position: relative;
+      float: left; }
+      .sleep-tips .sm-icons .facebook .icon, .sleep-tips .sm-icons .twitter .icon {
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        z-index: 10; }
+    .sleep-tips .sm-icons .facebook {
+      margin-right: 10px; }
+      .sleep-tips .sm-icons .facebook .icon {
+        background: url("../img/icons/facebook-icon.svg") center no-repeat; }
+    .sleep-tips .sm-icons .twitter .icon {
+      background: url("../img/icons/twitter-icon.svg") center no-repeat; }
 
 /*# sourceMappingURL=main.css.map */

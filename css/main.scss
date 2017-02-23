@@ -1,3 +1,8 @@
+@mixin position($top, $left) {
+  top: $top;
+  left: $left;
+}
+
 %block {
   margin : {
     right: auto;
@@ -7,7 +12,9 @@
 }
 
 %overlap {
-  position:absolute; top:0; left:0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 a {
@@ -30,7 +37,7 @@ h2 {
     weight: bold;
     size: 26px;
   }
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 h3 {
@@ -41,6 +48,10 @@ h3 {
 
 .heading {
     width: 70%;
+
+    h2 {
+        margin-bottom: 15px;
+    }
 
     .sub-heading {
       margin-bottom: 30px;
@@ -150,7 +161,7 @@ h3 {
 .products {
   width: 75%;
   overflow: hidden;
-  margin-bottom: 70px;
+  margin-bottom: 80px;
 
   h3 {
     margin-bottom: 40px;
@@ -177,5 +188,160 @@ h3 {
       }
     }
   }
+
+  @extend %block;
+}
+
+.sleep-tips {
+  margin-bottom: 10px;
+
+  .sub-heading {
+    margin-bottom: 20px;
+  }
+
+  .tips-carousel {
+    height: 462px;
+    overflow: hidden;
+    border: {
+      top: 1px solid #d5d5d5;
+      bottom: 1px solid #d5d5d5;
+    }
+
+    .tip {
+      padding-top: 10px;
+      text-align: left;
+
+      .slide-left, .slide-right {
+        width: 50%;
+        float: left;
+        box-sizing: border-box;
+      }
+
+      .slide-left {
+        img {
+          width: 100%;
+        }
+      }
+
+      .slide-right {
+        padding-top: 130px;
+        height: 291.5px;
+        width: 50%;
+        float: left;
+
+        .wrapper {
+          height: 119px;
+          width: 100%;
+          padding: 0 150px 0 40px;
+          box-sizing: border-box;
+
+          h3 {
+            font: {
+              size: 42px;
+              weight: bold;
+            }
+            text-decoration: uppercase;
+            margin-bottom: 8px;
+          }
+
+          .coach-says {
+            font: {
+              size: 24px;
+              weight: bold;
+            }
+            color: #0160a0;
+            margin-bottom: 18px;
+          }
+
+          .quote {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+
+    .interface {
+      position: relative;
+
+      .button-left, .button-right {
+        background: #0160a0;
+        height: 60px;
+        width: 60px;
+        position: absolute;
+        top: 180px;
+
+        .wrapper {
+          padding-top: 22.5px;
+          height: 37.5px;
+          width: 60px;
+        }
+
+        .arrow {
+          background: url('../img/icons/arrow-left.svg') no-repeat center;
+          height: 15px;
+          width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      .button-left {
+        left: 0px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+
+      .button-right {
+        right: 0px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+
+        .arrow {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  .sm-icons {
+    height: 50px;
+    width: 110px;
+    position: relative;
+    top: -20px;
+    left: 600px;
+    bottom: 0;
+
+    .facebook, .twitter {
+      display: block;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background: #000;
+      position: relative;
+      float: left;
+
+      .icon {
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        z-index: 10;
+      }
+    }
+
+    .facebook {
+      margin-right: 10px;
+
+      .icon {
+        background: url('../img/icons/facebook-icon.svg') center no-repeat;
+      }
+    }
+
+    .twitter {
+      .icon {
+        background: url('../img/icons/twitter-icon.svg') center no-repeat;
+      }
+    }
+  }
+
   @extend %block;
 }
