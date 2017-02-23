@@ -6,6 +6,10 @@
   text-align: center;
 }
 
+%overlap {
+  position:absolute; top:0; left:0;
+}
+
 body {
   font-family: Verdana, sans-serif;
 
@@ -43,6 +47,39 @@ body {
 
 .video {
   width: 90%;
+  position:relative;
+  height: 730px;
+
+  .overlay {
+    background: url('../img/youtube/poster.jpg') no-repeat center;
+    width: 100%;
+    height: 640px;
+
+    @extend %overlap;
+  }
+
+  .youtube {
+    @extend %overlap;
+  }
+
+  .play-button-container {
+    padding-top: 308px;
+    height: 332px;
+    width: 100%;
+
+    .play-button {
+      background: url('../img/buttons/play-button.svg') no-repeat top 19px left 21px;
+      padding: 19px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      height: 24px;
+      width: 21px;
+      margin: 0 auto;
+      position: relative;
+
+      @extend %overlap;
+    }
+  }
 
   @extend %block;
 }

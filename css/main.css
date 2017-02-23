@@ -3,6 +3,11 @@
   margin-left: auto;
   text-align: center; }
 
+.video .overlay, .video .youtube, .video .play-button-container .play-button {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
 body {
   font-family: Verdana, sans-serif; }
   body .container {
@@ -26,6 +31,25 @@ body {
   color: #505050; }
 
 .video {
-  width: 90%; }
+  width: 90%;
+  position: relative;
+  height: 730px; }
+  .video .overlay {
+    background: url("../img/youtube/poster.jpg") no-repeat center;
+    width: 100%;
+    height: 640px; }
+  .video .play-button-container {
+    padding-top: 308px;
+    height: 332px;
+    width: 100%; }
+    .video .play-button-container .play-button {
+      background: url("../img/buttons/play-button.svg") no-repeat top 19px left 21px;
+      padding: 19px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      height: 24px;
+      width: 21px;
+      margin: 0 auto;
+      position: relative; }
 
 /*# sourceMappingURL=main.css.map */
