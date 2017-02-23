@@ -1,0 +1,48 @@
+%block {
+  margin : {
+    right: auto;
+    left: auto;
+  }
+  text-align: center;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+
+  .container {
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+
+.heading {
+    width: 70%;
+    color: #404040;
+
+    h2 {
+      text-transform: uppercase;
+      font: {
+        weight: bold;
+        size: 26px;
+      }
+      margin-bottom: 20px;
+    }
+
+    .sub-heading {
+      margin-bottom: 30px;
+    }
+
+    @extend %block;
+}
+
+.sub-heading {
+  font-size: 14px;
+  line-height: 22px;
+  color: #505050;
+}
+
+.video {
+  width: 90%;
+
+  @extend %block;
+}
