@@ -12,9 +12,31 @@
       .transition-static {
         left: 0;
         transition:left 0.5s;
-      }
-      .right-transition {
         position: relative;
+      }
+
+      .right-transition {
+        transition:left 0.5s;
+        left: 100%;
+      }
+
+      .left-transition {
+        left: -100%;
+      }
+
+      .reset-transition {
+        left: 4%;
+      }
+
+      .hide-tip {
+        display: none;
+      }
+
+      .waiting-left {
+        left: -100%;
+      }
+
+      .waiting-right {
         left: 100%;
       }
     </style>
@@ -143,6 +165,18 @@
               <img src="img/sleep-tips/seq/tip_01_1.jpg" alt="Warm up to wind down">
             </div>
           </div>
+          <div id="tip-2" class="tip transition-static waiting-left hide-tip">
+            <div class="slide-right">
+              <div class="wrapper">
+                <h3>Coach Tip 2:</h3>
+                <p class="coach-says">IKEA Sleep Coach says:</p>
+                <p class="quote">"Potassium helps you sleep through the night. So break out a banana before bed."</p>
+              </div>
+            </div>
+            <div class="slide-left">
+              <img src="img/sleep-tips/seq/tip_02_1.jpg" alt="Potassium helps you sleep through the night">
+            </div>
+          </div>
         </div>
         <div class="sm-icons">
           <a class="facebook" href="http://facebook.com">
@@ -161,9 +195,34 @@
       // on right button click
       $('.button-right').on('click', function() {
         var currentTip = $('#tip-1');
+        var nextTip = $('#tip-2');
+
         // move currentTip to the right
         currentTip.addClass('right-transition');
+        nextTip.removeClass('hide-tip');
+
+        //hide currentTip after transition time and transition nextTip
+        setTimeout(function() {
+          currentTip.addClass('hide-tip');
+          nextTip.removeClass('waiting-left');
+        }, 500);
       });
+
+      $('.button-left').on('click', function() {
+        var currentTip = $('#tip-2');
+        var prevTip = $('#tip-1');
+
+        // move currentTip to the left
+        currentTip.addClass('left-transition');
+
+        // after moving to the left, hide the tip and show the next one
+        setTimeout(function() {
+          currentTip.addClass('hide-tip');
+          prevTip.show();
+          prevTip.removeClass('right-transition');
+        }, 500);
+      });
+
     });
 
     // poster frame click event
