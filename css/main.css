@@ -188,6 +188,30 @@ h3 {
     .sleep-tips .sm-icons .twitter .icon {
       background: url("../img/icons/twitter-icon.svg") center no-repeat; }
 
+.transition-static {
+  left: 0;
+  transition: left 0.5s;
+  position: relative; }
+
+.right-transition {
+  transition: left 0.5s;
+  left: 100%; }
+
+.left-transition {
+  left: -100%; }
+
+.reset-transition {
+  left: 4%; }
+
+.hide-tip {
+  display: none; }
+
+.waiting-left {
+  left: -100%; }
+
+.waiting-right {
+  left: 100%; }
+
 @media (max-width: 1024px) {
   .ideas .image-grid {
     margin-bottom: 20px; }
