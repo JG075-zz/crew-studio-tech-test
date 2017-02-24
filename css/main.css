@@ -155,11 +155,11 @@ h3 {
   .sleep-tips .sub-heading {
     margin-bottom: 20px; }
   .sleep-tips .tips-carousel {
-    height: 462px;
     overflow: hidden;
     border-top: 1px solid #d5d5d5;
     border-bottom: 1px solid #d5d5d5; }
     .sleep-tips .tips-carousel .tip {
+      margin-top: -100px;
       padding-top: 10px;
       text-align: left; }
       .sleep-tips .tips-carousel .tip .slide-left, .sleep-tips .tips-carousel .tip .slide-right {
@@ -167,16 +167,13 @@ h3 {
         float: left;
         box-sizing: border-box; }
       .sleep-tips .tips-carousel .tip .slide-left img {
-        width: 100%; }
+        width: 100%;
+        display: block; }
       .sleep-tips .tips-carousel .tip .slide-right {
-        padding-top: 130px;
-        height: 291.5px;
         width: 50%;
-        float: left; }
+        float: right; }
         .sleep-tips .tips-carousel .tip .slide-right .wrapper {
-          height: 119px;
-          width: 100%;
-          padding: 0 150px 0 40px;
+          padding: 20% 20% 0 10%;
           box-sizing: border-box; }
           .sleep-tips .tips-carousel .tip .slide-right .wrapper h3 {
             font-size: 42px;
@@ -189,15 +186,17 @@ h3 {
             color: #0160a0;
             margin-bottom: 18px; }
           .sleep-tips .tips-carousel .tip .slide-right .wrapper .quote {
-            font-size: 24px; }
+            font-size: 24px;
+            line-height: 26px; }
     .sleep-tips .tips-carousel .interface {
-      position: relative; }
+      position: relative;
+      height: 100px; }
       .sleep-tips .tips-carousel .interface .button-left, .sleep-tips .tips-carousel .interface .button-right {
         background: #0160a0;
         height: 60px;
         width: 60px;
         position: absolute;
-        top: 180px; }
+        top: 150%; }
         .sleep-tips .tips-carousel .interface .button-left .wrapper, .sleep-tips .tips-carousel .interface .button-right .wrapper {
           padding-top: 22.5px;
           height: 37.5px;
@@ -210,21 +209,20 @@ h3 {
           margin-right: auto; }
       .sleep-tips .tips-carousel .interface .button-left {
         left: 0px;
-        border-top-right-radius: 10px;
-        border-bottom-right-radius: 10px; }
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px; }
       .sleep-tips .tips-carousel .interface .button-right {
         right: 0px;
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px; }
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px; }
         .sleep-tips .tips-carousel .interface .button-right .arrow {
           transform: rotate(180deg); }
   .sleep-tips .sm-icons {
     height: 50px;
     width: 110px;
-    position: relative;
-    top: -20px;
-    left: 50%;
-    bottom: 0; }
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -30px; }
     .sleep-tips .sm-icons .facebook, .sleep-tips .sm-icons .twitter {
       display: block;
       height: 50px;
@@ -247,11 +245,11 @@ h3 {
 
 @media (max-width: 1024px) {
   .ideas .image-grid {
-    margin-bottom: 40px; }
+    margin-bottom: 20px; }
     .ideas .image-grid .image-grid-item {
       width: 100%;
       float: none;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
       padding: 0; }
       .ideas .image-grid .image-grid-item img {
         width: 60%; }
@@ -260,19 +258,62 @@ h3 {
     padding: 0; }
 
   .products .product-grid .item {
-    width: 33.3%; } }
+    width: 33.3%; }
+
+  .sleep-tips .tips-carousel .tip .slide-right .wrapper h3 {
+    font-size: 32px; }
+  .sleep-tips .tips-carousel .tip .slide-right .wrapper .coach-says, .sleep-tips .tips-carousel .tip .slide-right .wrapper .quote {
+    font-size: 20px; } }
 @media (max-width: 768px) {
   .ideas .image-grid .image-grid-item img {
     width: 80%; }
 
-  .video {
-    margin-bottom: 50px; } }
+  .products .product-grid .item {
+    width: 50%;
+    margin-bottom: 20px; }
+
+  .video, .products {
+    margin-bottom: 50px; }
+
+  .sleep-tips .tips-carousel .tip {
+    margin-top: -200px; }
+    .sleep-tips .tips-carousel .tip .slide-right {
+      float: none;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      margin-bottom: 40px; }
+      .sleep-tips .tips-carousel .tip .slide-right .wrapper {
+        padding: 0;
+        padding-top: 20px; }
+    .sleep-tips .tips-carousel .tip .slide-left {
+      width: 100%;
+      float: none; }
+
+  .sleep-tips .tips-carousel .interface {
+    height: 200px; } }
 @media (max-width: 425px) {
   .heading, .ideas {
     width: 90%; }
 
   .ideas .image-grid .image-grid-item img {
-    width: 100%; } }
+    width: 100%; }
+
+  .products {
+    width: 90%; }
+
+  .sleep-tips .tips-carousel .tip .slide-right {
+    width: 90%; }
+    .sleep-tips .tips-carousel .tip .slide-right .wrapper h3 {
+      font-size: 28px; }
+    .sleep-tips .tips-carousel .tip .slide-right .wrapper .quote {
+      font-size: 18px; }
+
+  .sleep-tips .tips-carousel .interface {
+    height: 150px; }
+  .sleep-tips .tips-carousel .tip {
+    margin-top: -150px; } }
 @media (max-width: 375px) {
   .video .videoPoster:before {
     background: url(../img/buttons/play-button.svg) no-repeat center left 14px;
@@ -280,6 +321,9 @@ h3 {
     background-size: 40%;
     top: 55%;
     width: 40px;
-    height: 40px; } }
+    height: 40px; }
+
+  .sleep-tips .sub-heading, .sleep-tips h2, .sleep-tips h3 {
+    padding: 0 10px; } }
 
 /*# sourceMappingURL=main.css.map */
