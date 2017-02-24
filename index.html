@@ -16,15 +16,14 @@
         <p class="sub-heading">Everyone can improve their sleeping performance. All it takes is a little preparation and the right kit. Which is where we come in.</p>
       </section>
       <div class="video">
-        <!-- the class "videoWrapper169" means a 16:9 aspect ration video. Another option is "videoWrapper43" for 4:3. -->
-       <div class="videoWrapper videoWrapper169 js-videoWrapper">
-         <!-- YouTube iframe. -->
-         <!-- note the iframe src is empty by default, the url is in the data-src="" argument -->
-         <!-- also note the arguments on the url, to autoplay video, remove youtube adverts/dodgy links to other videos, and set the interface language -->
-         <iframe class="videoIframe js-videoIframe" src="" frameborder="0" allowTransparency="true" allowfullscreen data-src="https://www.youtube.com/embed/7YwmESPTZFM?autoplay=1& modestbranding=1&rel=0&hl=sv"></iframe>
-         <!-- the poster frame - in the form of a button to make it keyboard accessible -->
-         <button class="videoPoster js-videoPoster" style="background-image:url(img/youtube/poster.jpg);">Play video</button>
-       </div>
+        <div class="videoWrapper videoWrapper169 js-videoWrapper">
+          <!-- YouTube iframe. -->
+          <!-- note the iframe src is empty by default, the url is in the data-src="" argument -->
+          <!-- also note the arguments on the url, to autoplay video, remove youtube adverts/dodgy links to other videos, and set the interface language -->
+          <iframe class="videoIframe js-videoIframe" src="" frameborder="0" allowTransparency="true" allowfullscreen data-src="https://www.youtube.com/embed/7YwmESPTZFM?autoplay=1& modestbranding=1&rel=0&hl=sv"></iframe>
+          <!-- the poster frame - in the form of a button to make it keyboard accessible -->
+          <button class="videoPoster js-videoPoster" style="background-image:url(img/youtube/poster.jpg);">Play video</button>
+        </div>
       </div>
       <section class="ideas">
         <h2>Performance Enhancing Designs</h2>
@@ -145,5 +144,41 @@
         </div>
       </section>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript">
+    // poster frame click event
+    $(document).on('click','.js-videoPoster',function(ev) {
+      ev.preventDefault();
+      var $poster = $(this);
+      var $wrapper = $poster.closest('.js-videoWrapper');
+      videoPlay($wrapper);
+    });
+
+    // play the targeted video (and hide the poster frame)
+    function videoPlay($wrapper) {
+      var $iframe = $wrapper.find('.js-videoIframe');
+      var src = $iframe.data('src');
+      // hide poster
+      $wrapper.addClass('videoWrapperActive');
+      // add iframe src in, starting the video
+      $iframe.attr('src',src);
+    }
+
+    // stop the targeted/all videos (and re-instate the poster frames)
+    function videoStop($wrapper) {
+      // if we're stopping all videos on page
+      if (!$wrapper) {
+        var $wrapper = $('.js-videoWrapper');
+        var $iframe = $('.js-videoIframe');
+      // if we're stopping a particular video
+      } else {
+        var $iframe = $wrapper.find('.js-videoIframe');
+      }
+      // reveal poster
+      $wrapper.removeClass('videoWrapperActive');
+      // remove youtube link, stopping the video from playing in the background
+      $iframe.attr('src','');
+    }
+    </script>
   </body>
 </html>
