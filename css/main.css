@@ -137,7 +137,10 @@ h3 {
         height: 60px;
         width: 60px;
         position: absolute;
-        top: 150%; }
+        top: 150%;
+        z-index: 10; }
+        .sleep-tips .tips-carousel .interface .button-left:hover, .sleep-tips .tips-carousel .interface .button-right:hover {
+          cursor: pointer; }
         .sleep-tips .tips-carousel .interface .button-left .wrapper, .sleep-tips .tips-carousel .interface .button-right .wrapper {
           padding-top: 22.5px;
           height: 37.5px;

@@ -8,6 +8,16 @@
     <link type="text/css" rel="stylesheet" href="css/reset.min.css">
     <link type="text/css" rel="stylesheet" href="css/main.css">
     <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <style>
+      .transition-static {
+        left: 0;
+        transition:left 0.5s;
+      }
+      .right-transition {
+        position: relative;
+        left: 100%;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -121,7 +131,7 @@
               </div>
             </div>
           </div>
-          <div class="tip">
+          <div id="tip-1" class="tip transition-static">
             <div class="slide-right">
               <div class="wrapper">
                 <h3>Coach Tip 1:</h3>
@@ -146,6 +156,16 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script type="text/javascript">
+    // check page has loaded
+    $(document).ready(function() {
+      // on right button click
+      $('.button-right').on('click', function() {
+        var currentTip = $('#tip-1');
+        // move currentTip to the right
+        currentTip.addClass('right-transition');
+      });
+    });
+
     // poster frame click event
     $(document).on('click','.js-videoPoster',function(ev) {
       ev.preventDefault();
