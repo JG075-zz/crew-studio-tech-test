@@ -1,68 +1,45 @@
-// check page has loaded
-$(document).ready(function() {
-  // on right button click
-  $('.button-right').on('click', function() {
-    var currentTip = $('#tip-1');
-    var nextTip = $('#tip-2');
+'use strict';
 
-    // move currentTip to the right
-    currentTip.addClass('right-transition');
-    nextTip.removeClass('hide-tip');
+$(function() {
 
-    //hide currentTip after transition time and transition nextTip
-    setTimeout(function() {
-      currentTip.addClass('hide-tip');
-      nextTip.removeClass('waiting-left');
-    }, 500);
+  // Setup variables
+  var ul =  $(".slider ul");
+  var slide_count = ul.children().length;
+  var slide_width_pc = 100.0 / slide_count;
+  var slide_index = 0;
+
+  // Set the ul width based on number of slides
+  ul.css({ "width": (100 * slide_count) + "%"})
+
+  // Find each slide and set CSS values
+  ul.find("li").each(function (indx) {
+    var left_percent = (slide_width_pc * indx) + "%";
+    $(this).css({ "left": left_percent });
+    $(this).css({ "width": (100 / slide_count ) + "%"});
   });
 
-  $('.button-left').on('click', function() {
-    var currentTip = $('#tip-2');
-    var prevTip = $('#tip-1');
-
-    // move currentTip to the left
-    currentTip.addClass('left-transition');
-
-    // after moving to the left, hide the tip and show the next one
-    setTimeout(function() {
-      currentTip.addClass('hide-tip');
-      prevTip.show();
-      prevTip.removeClass('right-transition');
-    }, 500);
+  // Listen for click of prev button
+  $(".slider .prev").click(function() {
+    slide(slide_index - 1);
   });
 
-});
+  // Listen for click of next button
+  $(".slider .next").click(function() {
+    $(".slider .next").click(function(){
+      slide(slide_index + 1);
+    });
+  });
 
-// poster frame click event
-$(document).on('click','.js-videoPoster',function(ev) {
-  ev.preventDefault();
-  var $poster = $(this);
-  var $wrapper = $poster.closest('.js-videoWrapper');
-  videoPlay($wrapper);
-});
+  function slide(new_slide_index) {
+    // Return nothing for invalid slide index
+    if(new_slide_index < 0 || new_slide_index >= slide_count) return;
 
-// play the targeted video (and hide the poster frame)
-function videoPlay($wrapper) {
-  var $iframe = $wrapper.find('.js-videoIframe');
-  var src = $iframe.data('src');
-  // hide poster
-  $wrapper.addClass('videoWrapperActive');
-  // add iframe src in, starting the video
-  $iframe.attr('src',src);
-}
+    // Calculate left margin of ul
+    var margin_left_pc = (new_slide_index * (-100)) + "%";
 
-// stop the targeted/all videos (and re-instate the poster frames)
-function videoStop($wrapper) {
-  // if we're stopping all videos on page
-  if (!$wrapper) {
-    var $wrapper = $('.js-videoWrapper');
-    var $iframe = $('.js-videoIframe');
-  // if we're stopping a particular video
-  } else {
-    var $iframe = $wrapper.find('.js-videoIframe');
+    // Move the ul using the left margin
+    ul.animate({ "margin-left": margin_left_pc }, 400, function() {
+      slide_index = new_slide_index;
+    });
   }
-  // reveal poster
-  $wrapper.removeClass('videoWrapperActive');
-  // remove youtube link, stopping the video from playing in the background
-  $iframe.attr('src','');
-}
+});

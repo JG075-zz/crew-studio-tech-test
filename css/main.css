@@ -95,73 +95,95 @@ h3 {
   margin-bottom: 10px; }
   .sleep-tips .sub-heading {
     margin-bottom: 20px; }
-  .sleep-tips .tips-carousel {
+  .sleep-tips .slider {
+    width: 100%;
     overflow: hidden;
+    height: 450px;
+    position: relative;
     border-top: 1px solid #d5d5d5;
     border-bottom: 1px solid #d5d5d5; }
-    .sleep-tips .tips-carousel .tip {
-      margin-top: -100px;
-      padding-top: 10px;
-      text-align: left;
-      clear: both; }
-      .sleep-tips .tips-carousel .tip .slide-left, .sleep-tips .tips-carousel .tip .slide-right {
-        width: 50%;
-        float: left;
-        box-sizing: border-box; }
-      .sleep-tips .tips-carousel .tip .slide-left img {
-        width: 100%;
-        display: block; }
-      .sleep-tips .tips-carousel .tip .slide-right {
-        width: 50%;
-        float: right; }
-        .sleep-tips .tips-carousel .tip .slide-right .wrapper {
-          padding: 20% 20% 0 10%;
-          box-sizing: border-box; }
-          .sleep-tips .tips-carousel .tip .slide-right .wrapper h3 {
+    .sleep-tips .slider ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      position: absolute;
+      width: 200%;
+      height: 100%;
+      top: 0; }
+      .sleep-tips .slider ul li {
+        padding-top: 10px;
+        padding: 0;
+        padding: 0;
+        margin: 0;
+        width: 33.333333%;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        bottom: 0; }
+        .sleep-tips .slider ul li .slide-left, .sleep-tips .slider ul li .slide-right {
+          width: 50%;
+          float: left; }
+        .sleep-tips .slider ul li .slide-left img {
+          width: 100%;
+          min-height: 100%; }
+        .sleep-tips .slider ul li .slide-right {
+          width: 50%;
+          padding: 10% 10% 0 5%;
+          box-sizing: border-box;
+          text-align: left; }
+          .sleep-tips .slider ul li .slide-right h3 {
             font-size: 42px;
             font-weight: bold;
             text-decoration: uppercase;
             margin-bottom: 8px; }
-          .sleep-tips .tips-carousel .tip .slide-right .wrapper .coach-says {
+          .sleep-tips .slider ul li .slide-right .coach-says {
             font-size: 24px;
             font-weight: bold;
             color: #0160a0;
             margin-bottom: 18px; }
-          .sleep-tips .tips-carousel .tip .slide-right .wrapper .quote {
+          .sleep-tips .slider ul li .slide-right .quote {
             font-size: 24px;
             line-height: 26px; }
-    .sleep-tips .tips-carousel .interface {
-      position: relative;
-      height: 100px; }
-      .sleep-tips .tips-carousel .interface .button-left, .sleep-tips .tips-carousel .interface .button-right {
-        background: #0160a0;
-        height: 60px;
-        width: 60px;
-        position: absolute;
-        top: 150%;
-        z-index: 10; }
-        .sleep-tips .tips-carousel .interface .button-left:hover, .sleep-tips .tips-carousel .interface .button-right:hover {
-          cursor: pointer; }
-        .sleep-tips .tips-carousel .interface .button-left .wrapper, .sleep-tips .tips-carousel .interface .button-right .wrapper {
-          padding-top: 22.5px;
-          height: 37.5px;
-          width: 60px; }
-        .sleep-tips .tips-carousel .interface .button-left .arrow, .sleep-tips .tips-carousel .interface .button-right .arrow {
+    .sleep-tips .slider .prev, .sleep-tips .slider .next {
+      background: #0160a0;
+      height: 60px;
+      width: 60px;
+      position: absolute;
+      top: 150%;
+      display: block;
+      box-sizing: border-box;
+      border: none;
+      outline: none;
+      top: 0;
+      bottom: 0;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      z-index: 2;
+      top: 40%; }
+      .sleep-tips .slider .prev .wrapper, .sleep-tips .slider .next .wrapper {
+        padding-top: 22.5px;
+        height: 37.5px;
+        width: 60px; }
+        .sleep-tips .slider .prev .wrapper .arrow, .sleep-tips .slider .next .wrapper .arrow {
           background: url("../img/icons/arrow-left.svg") no-repeat center;
           height: 15px;
           width: 100%;
           margin-left: auto;
           margin-right: auto; }
-      .sleep-tips .tips-carousel .interface .button-left {
-        left: 0px;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px; }
-      .sleep-tips .tips-carousel .interface .button-right {
-        right: 0px;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px; }
-        .sleep-tips .tips-carousel .interface .button-right .arrow {
-          transform: rotate(180deg); }
+      .sleep-tips .slider .prev:hover, .sleep-tips .slider .next:hover {
+        cursor: pointer; }
+    .sleep-tips .slider .prev {
+      left: 0;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px; }
+    .sleep-tips .slider .next {
+      right: 0;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px; }
+      .sleep-tips .slider .next .arrow {
+        transform: rotate(180deg); }
   .sleep-tips .sm-icons {
     height: 50px;
     width: 110px;
@@ -187,30 +209,6 @@ h3 {
         background: url("../img/icons/facebook-icon.svg") center no-repeat; }
     .sleep-tips .sm-icons .twitter .icon {
       background: url("../img/icons/twitter-icon.svg") center no-repeat; }
-
-.transition-static {
-  left: 0;
-  transition: left 0.5s;
-  position: relative; }
-
-.right-transition {
-  transition: left 0.5s;
-  left: 100%; }
-
-.left-transition {
-  left: -100%; }
-
-.reset-transition {
-  left: 4%; }
-
-.hide-tip {
-  display: none; }
-
-.waiting-left {
-  left: -100%; }
-
-.waiting-right {
-  left: 100%; }
 
 @media (max-width: 1024px) {
   .ideas .image-grid {
