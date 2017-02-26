@@ -167,7 +167,7 @@ h3 {
   .slider {
     width: 100%;
     overflow: hidden;
-    height: 450px;
+    padding-bottom: 35%;
     position: relative;
     border: {
       top: 1px solid #d5d5d5;
@@ -197,7 +197,7 @@ h3 {
 
         .slide-left, .slide-right {
           width: 50%;
-          float: left;
+          float: right;
         }
 
         .slide-left {
@@ -362,7 +362,7 @@ h3 {
     width: 33.3%;
   }
 
-  .sleep-tips .tips-carousel .tip .slide-right .wrapper {
+  .sleep-tips .slider li .slide-right {
     h3 {
       font-size: 32px;
     }
@@ -387,31 +387,38 @@ h3 {
     margin-bottom: 50px;
   }
 
-  .sleep-tips .tips-carousel .tip {
-    margin-top: -200px;
+  .sleep-tips .slider {
+    padding-bottom: 105%;
 
-    .slide-right {
-      float: none;
-      width: 80%;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-      margin-bottom: 40px;
-
-      .wrapper {
+    ul li {
+      .slide-right {
+        float: none;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        margin-bottom: 40px;
         padding: 0;
         padding-top: 20px;
+
+        .quote {
+          font-size: 18px;
+        }
+      }
+
+      .slide-left {
+        width: 100%;
+        float: none;
+
+        img {
+          width: 90%;
+          position: absolute;
+          min-height: 0;
+          bottom: 0;
+          left: 5%;
+        }
       }
     }
-
-    .slide-left {
-      width: 100%;
-      float: none;
-    }
-  }
-
-  .sleep-tips .tips-carousel .interface {
-    height: 200px;
   }
 }
 
@@ -428,26 +435,19 @@ h3 {
     width: 90%;
   }
 
-  .sleep-tips .tips-carousel .tip .slide-right {
+  .sleep-tips .slider ul li .slide-right {
     width: 90%;
-    .wrapper {
-      h3 {
-        font-size: 28px;
-      }
 
-      .quote {
-        font-size: 18px;
-      }
-    }
-  }
-
-  .sleep-tips .tips-carousel {
-    .interface {
-      height: 150px;
+    h3 {
+      font-size: 28px;
     }
 
-    .tip {
-      margin-top: -150px;
+    .quote {
+      font-size: 16px;
+    }
+
+    .coach-says {
+      font-size: 20px;
     }
   }
 }
@@ -462,8 +462,8 @@ h3 {
     height: 40px;
   }
 
-  .sleep-tips .sub-heading, .sleep-tips h2 {
-    padding: 0 10px;
+  .sleep-tips .slider {
+    padding-bottom: 125%;
   }
 }
 
