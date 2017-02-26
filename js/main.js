@@ -7,13 +7,16 @@ $(document).ready(function() {
   var slide_count = ul.children().length;
   var slide_width_pc = 100.0 / slide_count;
   var slide_index = 0;
+  var img_start_name = "tip";
+  var img_locations = "img/sleep-tips/seq"
+  var imgs_loaded = false;
 
   // Set the ul width based on number of slides
   ul.css({ "width": (100 * slide_count) + "%"})
 
   // Find each slide and set CSS values
-  ul.find("li").each(function (indx) {
-    var left_percent = (slide_width_pc * indx) + "%";
+  ul.find("li").each(function (index) {
+    var left_percent = (slide_width_pc * index) + "%";
     $(this).css({ "left": left_percent });
     $(this).css({ "width": (100 / slide_count ) + "%"});
   });
@@ -26,6 +29,11 @@ $(document).ready(function() {
   // Listen for click of next button
   $(".slider .next").click(function() {
     slide(slide_index + 1);
+    // Load the slides images if it's the first click
+    if(slide_index === 0 && imgs_loaded === false) {
+      loadImages();
+      imgs_loaded = true;
+    }
   });
 
   function slide(new_slide_index) {
@@ -40,4 +48,20 @@ $(document).ready(function() {
       slide_index = new_slide_index;
     });
   }
+
+  function loadImages() {
+    // Adjust the image src for every slide after the first two
+    ul.find("li").each(function(index){
+      if(index > 1) {
+        $(this).find("img").attr("src", createImgSrc(index));
+      }
+
+      function createImgSrc(index) {
+        // Don't add _0 to numbers after 9 i.e. _09 but not _010
+        var preNum = (index + 1) > 9 ? "_" : "_0";
+        return img_locations + "/" + img_start_name + preNum + (index + 1) + "_1.jpg";
+      }
+    });
+  }
+
 });
