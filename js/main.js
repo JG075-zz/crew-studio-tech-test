@@ -46,7 +46,15 @@ $(document).ready(function() {
     // Move the ul using the left margin
     ul.animate({ "margin-left": margin_left_pc }, 400, function() {
       slide_index = new_slide_index;
+      animateImg();
     });
+
+    // Change the image to make it look animated
+    function animateImg() {
+      setTimeout(function() {
+        ul.find("li:nth-child(" + (slide_index + 1) + ")").find("img").attr("src", createImgSrc(slide_index, true));
+      }, 300);
+    }
   }
 
   function loadImages() {
@@ -55,13 +63,15 @@ $(document).ready(function() {
       if(index > 1) {
         $(this).find("img").attr("src", createImgSrc(index));
       }
-
-      function createImgSrc(index) {
-        // Don't add _0 to numbers after 9 i.e. _09 but not _010
-        var preNum = (index + 1) > 9 ? "_" : "_0";
-        return img_locations + "/" + img_start_name + preNum + (index + 1) + "_1.jpg";
-      }
     });
+  }
+
+  function createImgSrc(index, next = false) {
+    // Don't add _0 to numbers after 9 i.e. _09 but not _010
+    var preNum = (index + 1) > 9 ? "_" : "_0";
+    // Append _2 if it should display the next image
+    var append = next ? "_2" : "_1";
+    return img_locations + "/" + img_start_name + preNum + (index + 1) + append + ".jpg";
   }
 
 });
