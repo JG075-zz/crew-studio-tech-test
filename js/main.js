@@ -36,6 +36,8 @@ $(document).ready(function() {
     }
   });
 
+  var slide_img;
+
   function slide(new_slide_index) {
     // Return nothing for invalid slide index
     if(new_slide_index < 0 || new_slide_index >= slide_count) return;
@@ -45,15 +47,22 @@ $(document).ready(function() {
 
     // Move the ul using the left margin
     ul.animate({ "margin-left": margin_left_pc }, 400, function() {
+      resetPrevImg(slide_index);
       slide_index = new_slide_index;
       animateImg();
     });
 
     // Change the image to make it look animated
     function animateImg() {
+      slide_img = ul.find("li:nth-child(" + (slide_index + 1) + ")").find("img");
       setTimeout(function() {
-        ul.find("li:nth-child(" + (slide_index + 1) + ")").find("img").attr("src", createImgSrc(slide_index, true));
+        slide_img.attr("src", createImgSrc(slide_index, true));
       }, 300);
+    }
+
+    // Reset the previous image to its original
+    function resetPrevImg(index) {
+      if(slide_img !== undefined) slide_img.attr("src", createImgSrc((index)));
     }
   }
 
