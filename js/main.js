@@ -1,5 +1,6 @@
 'use strict';
 
+
 $(document).ready(function() {
 
   // Setup variables
@@ -19,6 +20,18 @@ $(document).ready(function() {
     var left_percent = (slide_width_pc * index) + "%";
     $(this).css({ "left": left_percent });
     $(this).css({ "width": (100 / slide_count ) + "%"});
+  });
+
+  $('.icon').appear();
+
+  var appeared = false;
+
+  // When .icon appears on screen animate the first slide
+  $(document.body).on('appear', '.icon', function(e, $affected) {
+    if(!appeared) {
+      ul.find("li:nth-child(1)").find("img").attr("src", createImgSrc(0, true));
+      appeared = true;
+    }
   });
 
   // Listen for click of prev button
