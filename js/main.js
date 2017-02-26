@@ -49,7 +49,8 @@ $(document).ready(function() {
     }
   });
 
-  var slide_img;
+  // Set slide_img to first slide img on load
+  var slide_img = ul.find("li:nth-child(1)").find("img");
 
   function slide(new_slide_index) {
     // Return nothing for invalid slide index
