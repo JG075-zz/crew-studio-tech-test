@@ -1,6 +1,6 @@
 'use strict';
 
-$(function() {
+$(document).ready(function() {
 
   // Setup variables
   var ul =  $(".slider ul");
@@ -25,9 +25,7 @@ $(function() {
 
   // Listen for click of next button
   $(".slider .next").click(function() {
-    $(".slider .next").click(function(){
-      slide(slide_index + 1);
-    });
+    slide(slide_index + 1);
   });
 
   function slide(new_slide_index) {
